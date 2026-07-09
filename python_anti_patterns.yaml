@@ -1,0 +1,30 @@
+rules:
+  - id: list-initialization-in-loop
+    pattern: |
+      $LIST = []
+      ...
+      for $VAR in $ITER:
+          ...
+          $LIST.append(...)
+    message: "Performance Anti-pattern: Initializing a list by appending in a loop is slower than a list comprehension due to function call overhead on every iteration. Cost 50"
+    languages: [python]
+    severity: WARNING
+
+  - id: string-concatenation-in-loop
+    pattern: |
+      $STR = $INIT
+      ...
+      for $VAR in $ITER:
+          ...
+          $STR += $VAL
+    message: "Performance Anti-pattern: Using `+=` to concatenate strings in a loop can be memory inefficient and slow. Use `''.join(...)` instead. Cost 200"
+    languages: [python]
+    severity: WARNING
+
+  - id: iterate-with-range-len
+    pattern: |
+      for $I in range(len($SEQ)):
+          ...
+    message: "Performance Anti-pattern: Iterating with `range(len())` is slightly slower in CPython than iterating directly over the sequence. Cost 100"
+    languages: [python]
+    severity: INFO

@@ -1,0 +1,178 @@
+{
+    "version": "1.168.0",
+    "results": [
+        {
+            "check_id": "string-concatenation-in-loop",
+            "path": "bad_data.py",
+            "start": {
+                "line": 3,
+                "col": 5,
+                "offset": 99
+            },
+            "end": {
+                "line": 5,
+                "col": 30,
+                "offset": 193
+            },
+            "extra": {
+                "message": "Performance Anti-pattern: Using `+=` to concatenate strings in a loop can be memory inefficient and slow. Use `''.join(...)` instead. Cost 200",
+                "metadata": {},
+                "severity": "WARNING",
+                "fingerprint": "requires login",
+                "lines": "requires login",
+                "validation_state": "NO_VALIDATOR",
+                "engine_kind": "OSS"
+            }
+        },
+        {
+            "check_id": "list-initialization-in-loop",
+            "path": "bad_data.py",
+            "start": {
+                "line": 8,
+                "col": 5,
+                "offset": 269
+            },
+            "end": {
+                "line": 10,
+                "col": 38,
+                "offset": 351
+            },
+            "extra": {
+                "message": "Performance Anti-pattern: Initializing a list by appending in a loop is slower than a list comprehension due to function call overhead on every iteration. Cost 50",
+                "metadata": {},
+                "severity": "WARNING",
+                "fingerprint": "requires login",
+                "lines": "requires login",
+                "validation_state": "NO_VALIDATOR",
+                "engine_kind": "OSS"
+            }
+        },
+        {
+            "check_id": "iterate-with-range-len",
+            "path": "bad_data.py",
+            "start": {
+                "line": 13,
+                "col": 5,
+                "offset": 425
+            },
+            "end": {
+                "line": 14,
+                "col": 31,
+                "offset": 490
+            },
+            "extra": {
+                "message": "Performance Anti-pattern: Iterating with `range(len())` is slightly slower in CPython than iterating directly over the sequence. Cost 100",
+                "metadata": {},
+                "severity": "INFO",
+                "fingerprint": "requires login",
+                "lines": "requires login",
+                "validation_state": "NO_VALIDATOR",
+                "engine_kind": "OSS"
+            }
+        },
+        {
+            "check_id": "iterate-with-range-len",
+            "path": "main.py",
+            "start": {
+                "line": 7,
+                "col": 1,
+                "offset": 80
+            },
+            "end": {
+                "line": 8,
+                "col": 9,
+                "offset": 114
+            },
+            "extra": {
+                "message": "Performance Anti-pattern: Iterating with `range(len())` is slightly slower in CPython than iterating directly over the sequence. Cost 100",
+                "metadata": {},
+                "severity": "INFO",
+                "fingerprint": "requires login",
+                "lines": "requires login",
+                "validation_state": "NO_VALIDATOR",
+                "engine_kind": "OSS"
+            }
+        }
+    ],
+    "errors": [],
+    "paths": {
+        "scanned": [
+            "bad_data.py",
+            "main.py",
+            "parser.py"
+        ]
+    },
+    "time": {
+        "rules": [],
+        "rules_parse_time": 0.0011060237884521484,
+        "profiling_times": {
+            "config_time": 0.1453533172607422,
+            "core_time": 0.34191465377807617,
+            "ignores_time": 0.00015497207641601562,
+            "total_time": 0.4958682060241699
+        },
+        "parsing_time": {
+            "total_time": 0.0,
+            "per_file_time": {
+                "mean": 0.0,
+                "std_dev": 0.0
+            },
+            "very_slow_stats": {
+                "time_ratio": 0.0,
+                "count_ratio": 0.0
+            },
+            "very_slow_files": []
+        },
+        "scanning_time": {
+            "total_time": 0.05109000205993652,
+            "per_file_time": {
+                "mean": 0.017030000686645508,
+                "std_dev": 1.6131696156662656e-07
+            },
+            "very_slow_stats": {
+                "time_ratio": 0.0,
+                "count_ratio": 0.0
+            },
+            "very_slow_files": []
+        },
+        "matching_time": {
+            "total_time": 0.0,
+            "per_file_and_rule_time": {
+                "mean": 0.0,
+                "std_dev": 0.0
+            },
+            "very_slow_stats": {
+                "time_ratio": 0.0,
+                "count_ratio": 0.0
+            },
+            "very_slow_rules_on_files": []
+        },
+        "tainting_time": {
+            "total_time": 0.0,
+            "per_def_and_rule_time": {
+                "mean": 0.0,
+                "std_dev": 0.0
+            },
+            "very_slow_stats": {
+                "time_ratio": 0.0,
+                "count_ratio": 0.0
+            },
+            "very_slow_rules_on_defs": []
+        },
+        "fixpoint_timeouts": [],
+        "prefiltering": {
+            "project_level_time": 0.0,
+            "file_level_time": 0.0,
+            "rules_with_project_prefilters_ratio": 0.0,
+            "rules_with_file_prefilters_ratio": 0.6666666666666666,
+            "rules_selected_ratio": 0.6666666666666666,
+            "rules_matched_ratio": 0.6666666666666666
+        },
+        "targets": [],
+        "total_bytes": 0,
+        "max_memory_bytes": 115588288
+    },
+    "engine_requested": "OSS",
+    "skipped_rules": [],
+    "profiling_results": []
+}
